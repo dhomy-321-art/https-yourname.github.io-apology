@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Dno ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(to bottom, #fff5f7, #ffe6eb);
+    overflow: hidden;
+}
+
+/* Title */
+h1 {
+    color: #c9184a;
+    margin-top: 40px;
+    animation: fadeIn 2s ease;
+}
+
+/* subtitle */
+p {
+    color: #555;
+    animation: fadeIn 3s ease;
+}
+
+/* 🌹 animated flowers */
+.flower {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+/* envelope */
+.envelope {
+    font-size: 70px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.3s;
+}
+.envelope:hover {
+    transform: scale(1.2);
+}
+
+/* letter */
+#letter {
+    display: none;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 500px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+/* typing effect */
+.typing {
+    border-right: 2px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 4s steps(40, end), blink .7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+/* buttons */
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.yes { background: #ff4d6d; color: white; }
+.no { background: #ccc; }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/FNjaFIlcGUE?autoplay=1&loop=1&playlist=FNjaFIlcGUE"
+frameborder="0" allow="autoplay"></iframe>
+
+<h1>Flowers for you Dno 🌹</h1>
+<p>Click the letter for a surprise</p>
+
+<div class="envelope" onclick="openLetter()">💌</div>
+
+<div id="letter">
+    <h2>I’m sorry Dno ❤️</h2>
+
+    <p class="typing">
+    I’m really sorry for upsetting you, it wasn’t my intention.
+    </p>
+
+    <p>
+    I love you more than the stars in the sky because you are my moon.
+    </p>
+
+    <p>
+    I’m sorry for being childish and mean. I should’ve taken it more seriously.
+    </p>
+
+    <p>
+    I don’t want to lose you… that’s why I reacted the way I did.
+    </p>
+
+    <p>
+    I want a future with you, and I love you so much.
+    </p>
+
+    <p><strong>Do you forgive me? ❤️</strong></p>
+
+    <button class="yes" onclick="forgive()">Yes</button>
+    <button class="no" onclick="moveButton(this)">No</button>
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("letter").style.display = "block";
+}
+
+function moveButton(btn) {
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * 80 + "%";
+    btn.style.left = Math.random() * 80 + "%";
+}
+
+function forgive() {
+    alert("Thank you Dno ❤️ I promise I’ll do better.");
+}
+
+// 🌸 falling flowers
+function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML = "🌸";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 8000);
+}
+
+setInterval(createFlower, 300);
+</script>
+
+</body>
+</html>
